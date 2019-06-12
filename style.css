@@ -1,13 +1,9 @@
-/* body {
-    background-image: url("images/potential\ jeopardy\ background\ 1.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-} */
-
-#jeopardy {
+/* jeopardy background styles */
+body {
     background-image: url("images/jeopardy\ background.png");
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 100vw;
     min-height: 100vh;
 }
+
