@@ -46,8 +46,10 @@ answerField.addEventListener('click', function (evt) {
     //if the button clicked on doesn't have an id "correct" give them a wrong answer alert
     if (evt.target.id !== "correct") {
         alert("wrong answer!")
+        deductFromScore();
     } else {
         alert("right answer!")
+        addToScore();
     }
     //to remove the question after it's been asked
     document.getElementById(correspondingQuestion).innerHTML = ""
@@ -55,3 +57,17 @@ answerField.addEventListener('click', function (evt) {
     $('.answer-field').children().remove()
 })
 
+//creating a score variable
+var scoreAsString = document.querySelector('#score').innerHTML
+var score = parseInt(scoreAsString.substr(6))
+
+//making a function to add to the score
+function addToScore () {
+    score += questionInfo[correspondingQuestion].points
+    document.querySelector('#score').innerHTML = `Score: ${score}`
+}
+
+function deductFromScore () {
+    score -= questionInfo[correspondingQuestion].points
+    document.querySelector('#score').innerHTML = `Score: ${score}`
+}
