@@ -16,7 +16,7 @@ div {
 .game-container {
     display: inline-grid;
     grid-gap: 10px 10px;
-    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh;
+    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh;
     grid-template-columns: 10vw 10vw 10vw 10vw 10vw;
     justify-items: center;
     align-items: center; 
@@ -35,8 +35,8 @@ div {
     grid-column: 5 / span 1;
 }
 
-#answer-field {
-    grid-column: 1 / span 5;
+.answer-field {
+    grid-area: 8 / 1 / 8 / 5;
 }
 
 .border {
