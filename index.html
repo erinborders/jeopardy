@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-<!-- <div class="border"> -->
+    <!-- <div class="border"> -->
     <div class="game-container">
         <div class="grid-item" id="timer">Time:</div>
         <div class="grid-item" id="title">Jeopardy!</div>
@@ -53,18 +55,22 @@
         <div class="grid-item question-tile" id="category5-question5">50pts</div>
         <div class="grid-item" id="answer-field">
             <div id="category1-question1">
-                <button type="button">Investigate loudly</button>
+                <button type="button" id="correct">Investigate loudly</button>
                 <button type="button">Investigate quietly</button>
                 <button type="button">Call the police</button>
                 <button type="button">Ignore it</button>
             </div>
+            <div id="category2-question1">
+                <button type="button">A</button>
+                <button type="button" id="correct">B</button>
+                <button type="button">C</button>
+                <button type="button">Ignore it</button>
+            </div>
         </div>
     </div>
-<!-- </div> -->
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+    <!-- </div> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
