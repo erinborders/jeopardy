@@ -1,14 +1,16 @@
 //all the data affiliated with each question tile
 const questionInfo = [
     {
+        category: "Home Alone",
         points: 10,
         question: "You're home alone and hear a noise",
         answers: ['<button type="button">Investigate loudly</button>', '<button type="button">Investigate quietly</button>', '<button type="button" id="correct">Call the police</button>', '<button type="button">Ignore it</button>']
     },
     {
-        points: 10,
+        category: "Home Alone",
+        points: 20,
         question: "A stranger calls and says nothing, just breathes",
-        answers: ['<button type="button">Ignore it</button>', '<button type="button">Start chatting</button>', '<button type="button">Call the police</button>', '<button type="button">Move out of your house</button>']
+        answers: [`<button type="button">Tell them you dont want any</button>`, `<button type="button">Hang up</button>`, `<button type="button">Call the police</button>`, `<button type="button">Move out of your house</button>`]
     }
    
 ]
