@@ -1,3 +1,4 @@
+//all the data affiliated with each question tile
 const questionInfo = [
     {
         points: 10,
@@ -12,6 +13,7 @@ const questionInfo = [
    
 ]
 
+//creating a for loop to create divs with a class names, and an id that will match the index of it's corresponding object in my questionInfo array
 for (let i = 0; i <2; i++) {
     let div = document.createElement('div')
     div.classList.add("grid-item")
@@ -23,10 +25,8 @@ for (let i = 0; i <2; i++) {
 
 var questionTile = $('.question-tile')
 var answerField = document.querySelector('.answer-field')
-
-function test (e) {
-    
-}
+//create a variable to store the id of the question tile that was clicked
+var correspondingQuestion = 0
 
 questionTile.on('click', function (evt) {
     //storing the id of the div's in a variable
@@ -37,53 +37,21 @@ questionTile.on('click', function (evt) {
     for (let i = 0; i<questionInfo[0].answers.length; i++) {
         answerField.innerHTML += questionInfo[questionTileID].answers[i]
     }  
+    correspondingQuestion = questionTileID
 })
 
+//create function to figure out if answers are right or wrong
 
+answerField.addEventListener('click', function (evt) {
+    //if the button clicked on doesn't have an id "correct" give them a wrong answer alert
+    if (evt.target.id !== "correct") {
+        alert("wrong answer!")
+    } else {
+        alert("right answer!")
+    }
+    //to remove the question after it's been asked
+    document.getElementById(correspondingQuestion).innerHTML = ""
+    //to remove the answer buttons after they've been clicked
+    $('.answer-field').children().remove()
+})
 
-
-
-// // let question = $('.question-tile p')
-// let buttons = $('button')
-// let rightAnswer = $('#correct')
-
-// //create a function to hide the question
-// // function hideQuestion () {
-// //     question.hide();
-// // }
-// // hideQuestion();
-
-// function deleteQuestion () {
-//     question.remove();
-// }
-
-// //create a function to hide the answers
-// function hideAnswers () {
-//     let answers = $('#answer-field div')
-//     answers.hide();
-// }
-// hideAnswers();
-
-// //create a function to reveal the answers
-// function revealAnswers () {
-//     let answerID = event.target.parentNode.id
-//     let thisAnswer = $('#answer-field #' + answerID)
-//     console.log(thisAnswer)
-//     thisAnswer.show();
-// }
-
-// //create event listener to delete question tile and reveal the questions and answers
-
-
-
-// //create event listener for answer buttons and deleting question
-// buttons.on('click', function () {
-//     if (event.target.id !== "correct") {
-//         alert("wrong answer!")
-//         // console.log($(this).id)
-//     } else {
-//         alert("right answer!")
-//     }
-//     $(this).parent().remove()
-//     deleteQuestion();
-// })
