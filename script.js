@@ -1,22 +1,28 @@
 //all the data affiliated with each question tile
 const questionInfo = [
     {
-        category: "Home Alone",
+        category: "Serial Killers",
         points: 10,
         question: "You're home alone and hear a noise",
         answers: ['<button type="button">Investigate loudly</button>', '<button type="button">Investigate quietly</button>', '<button type="button" id="correct">Call the police</button>', '<button type="button">Ignore it</button>']
     },
     {
-        category: "Home Alone",
+        category: "Serial Killers",
         points: 20,
         question: "A stranger calls and says nothing, just breathes",
-        answers: [`<button type="button">Tell them you dont want any</button>`, `<button type="button">Hang up</button>`, `<button type="button">Call the police</button>`, `<button type="button">Move out of your house</button>`]
+        answers: [`<button type="button">Tell them you dont want any</button>`, `<button type="button">Hang up</button>`, `<button type="button">Call the police</button>`, `<button type="button" id="correct">Move out of your house</button>`]
+    },
+    {
+        category: "Serial Killers",
+        points: 30,
+        question: "A strange local accosts you with warnings on your trip",
+        answers: [`<button type="button">Roll your eyes</button>`, `<button type="button">Insult them</button>`, `<button type="button" id="correct">Call off the trip</button>`, `<button type="button">Call the police</button>`]
     }
    
 ]
 
 //creating a for loop to create divs with a class names, and an id that will match the index of it's corresponding object in my questionInfo array
-for (let i = 0; i <2; i++) {
+for (let i = 0; i <3; i++) {
     let div = document.createElement('div')
     div.classList.add("grid-item")
     div.classList.add("question-tile")
