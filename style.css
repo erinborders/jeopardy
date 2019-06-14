@@ -59,3 +59,17 @@ div {
     display: inline-block;
     display: none;
 }
+
+#loserMessage {
+    position: absolute;
+    top: 35vh;
+    left: 36vw;
+    padding: 10px;
+    border: 1px solid black;
+    min-width: 10vw;
+    min-height: 10vh;
+    background-color: rgb(245, 58, 58);
+    z-index: 1;
+    display: inline-block;
+    display: none;
+}

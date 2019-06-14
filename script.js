@@ -90,3 +90,8 @@ function deductFromScore () {
 function youHaveWon () {
     $('#winnerMessage').show();
 }
+
+//making a function to tell you when you've lost
+function youHaveLost () {
+    $('#loserMessage').show();
+}
