@@ -57,6 +57,13 @@ const questionInfo = [
         wrongAnswer: "WRONG. That thing's gonna hear you no matter what so incapacitate it with loud sounds."
     },
     {
+        category: "Ghosts and Demons",
+        points: 30,
+        question: "Your friend dares you to watch a 'scary tape' on their laptop.",
+        answers: [`<button type="button">Accept. You're no punk</button>`, `<button type="button">Say no but let them watch it</button>`, `<button type="button">Destroy the computer</button>`, `<button type="button" id="correct">Unfriend them</button>`],
+        wrongAnswer: "WRONG. A friend like that is just going to bring trouble into your life. Better to unfriend."
+    },
+    {
         category: "Serial Killers",
         points: 40,
         question: "You wake up chained to wall in an empty basement.",
@@ -71,6 +78,13 @@ const questionInfo = [
         wrongAnswer: "WRONG. You're in SPACE. Always trap it in the airlock."
     },
     {
+        category: "Ghosts and Demons",
+        points: 40,
+        question: "A demon has possessed your child.",
+        answers: [`<button type="button">Call the hospital</button>`, `<button type="button">Exorcise her</button>`, `<button type="button" id="correct">Abandon her</button>`, `<button type="button">Pray</button>`],
+        wrongAnswer: "WRONG. Look, you can't save everybody. Just leave her and hope she doesn't find you."
+    },
+    {
         category: "Serial Killers",
         points: 50,
         question: "A camper that drowned 20 years ago just busted in your door",
@@ -83,12 +97,19 @@ const questionInfo = [
         question: "An elite alien assassin is hunting you.",
         answers: [`<button type="button">Camouflage yourself</button>`, `<button type="button">Shoot wildly</button>`, `<button type="button" id="correct">GET TO THE CHOPPA</button>`, `<button type="button">Bribe it</button>`],
         wrongAnswer: "WRONG. It's an ELITE ASSASSIN. Your only hope is escape."
+    },
+    {
+        category: "Ghosts and Demons",
+        points: 50,
+        question: "Children disappear from your town every 27 years.",
+        answers: [`<button type="button">Leave the town</button>`, `<button type="button">Face the evil festering in the underground</button>`, `<button type="button">File missing person reports</button>`, `<button type="button" id="correct">Thank God it didn't come when you were a kid</button>`],
+        wrongAnswer: "WRONG. Bad things come to people who shake up the status quo in a 'sleepy town.' Just keep your head down and you'll do fine."
     }
    
 ]
 
 //creating a for loop to create divs with a class names, and an id that will match the index of it's corresponding object in my questionInfo array
-for (let i = 0; i <12; i++) {
+for (let i = 0; i <15; i++) {
     let div = document.createElement('div')
     div.classList.add("grid-item")
     div.classList.add("question-tile")

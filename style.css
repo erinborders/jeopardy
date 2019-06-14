@@ -18,10 +18,10 @@ div {
     display: inline-grid;
     grid-gap: 10px 10px;
     grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh;
-    grid-template-columns: 10vw 10vw 10vw 10vw 10vw;
+    grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
     justify-items: center;
     align-items: center; 
-    margin: 10vh 25vw;
+    margin: 10vh 7vw;
 }
 
 #timer {
@@ -37,7 +37,7 @@ div {
 }
 
 .answer-field {
-    grid-area: 8 / 1 / 8 / 5;
+    grid-area: 8 / 1 / 8 / 6;
 }
 
 .border {
