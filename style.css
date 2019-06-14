@@ -1,5 +1,6 @@
 /* jeopardy background styles */
 body {
+    /* display: flex; */
     background-image: url("images/jeopardy\ background.png");
     background-color: black;
     background-repeat: no-repeat;
@@ -41,4 +42,20 @@ div {
 
 .border {
     background-color: gray;
+}
+
+
+/* styling the pop up window with the winner message */
+#winnerMessage {
+    position: absolute;
+    top: 35vh;
+    left: 36vw;
+    padding: 10px;
+    border: 1px solid black;
+    min-width: 10vw;
+    min-height: 10vh;
+    background-color: rgb(166, 241, 95);
+    z-index: 1;
+    display: inline-block;
+    display: none;
 }

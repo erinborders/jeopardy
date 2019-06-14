@@ -83,8 +83,10 @@ function deductFromScore () {
     document.querySelector('#score').innerHTML = `Score: ${score}`
 }
 
+
+
+
 //making a function to tell you when you've won
-
 function youHaveWon () {
-
+    $('#winnerMessage').show();
 }
