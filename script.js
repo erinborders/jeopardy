@@ -22,6 +22,20 @@ const questionInfo = [
         wrongAnswer: "WRONG. Don't take any chances - just burn it."
     },
     {
+        category: "Zombies",
+        points: 10,
+        question: "Your local news is announcing reports of a strange illness.",
+        answers: [`<button type="button" id="correct">Bunker down</button>`, `<button type="button">Shrug. You got your flu shot</button>`, `<button type="button">Put on a face mask</button>`, `<button type="button">Stock up on hand sanitizer</button>`],
+        wrongAnswer: "WRONG. Bunker down, dude - you can never be too careful."
+    },
+    {
+        category: "Animals",
+        points: 10,
+        question: "Your dog's acting a little funny.",
+        answers: [`<button type="button">Shrug it off</button>`, `<button type="button" id="correct">Call animal control</button>`, `<button type="button">Give him treats</button>`, `<button type="button">Take him to the vet</button>`],
+        wrongAnswer: "WRONG. It's definitely rabies. Let animal control take care of it."
+    },
+    {
         category: "Serial Killers",
         points: 20,
         question: "A stranger calls and says nothing, just breathes.",
@@ -41,6 +55,20 @@ const questionInfo = [
         question: "A doll keeps appearing on your doorstep.",
         answers: [`<button type="button" id="correct">Call the exorcist</button>`, `<button type="button">Give it to your daughter</button>`, `<button type="button">Keep it as decoration</button>`, `<button type="button">Look at it with nostalgia for your own childhood</button>`],
         wrongAnswer: "WRONG. Dude, even if it wasn't haunted, you don't know where that thing's been."
+    },
+    {
+        category: "Zombies",
+        points: 20,
+        question: "Your neighbor offers to help you bury your dead cat in a special cemetary.",
+        answers: [`<button type="button">How thoughtful</button>`, `<button type="button" id="correct">Avoid them</button>`, `<button type="button">Ask why the cemetary's special</button>`, `<button type="button">Refuse</button>`],
+        wrongAnswer: "WRONG. No neighbor offers to bury your dead cat out of the goodness of their heart. Avoid them, they're probably a psychopath."
+    },
+    {
+        category: "Animals",
+        points: 20,
+        question: "You get a call inviting you to work at an innovative research lab located underwater.",
+        answers: [`<button type="button">Accept</button>`, `<button type="button">Tell them you'll think about it</button>`, `<button type="button">Refuse but eventually accept</button>`, `<button type="button" id="correct">Hang up</button>`],
+        wrongAnswer: "WRONG. Nothing good ever happens at underwater research labs. Hang up immediately."
     },
     {
         category: "Serial Killers",
@@ -64,6 +92,20 @@ const questionInfo = [
         wrongAnswer: "WRONG. A friend like that is just going to bring trouble into your life. Better to unfriend."
     },
     {
+        category: "Zombies",
+        points: 30,
+        question: "Some weirdo just bit your arm???",
+        answers: [`<button type="button" id="correct">CHOP IT OFF</button>`, `<button type="button">Disinfect it</button>`, `<button type="button">Go to the hospital</button>`, `<button type="button">Shrug it off</button>`],
+        wrongAnswer: "WRONG. We're talking about zombies, your only hope is to chop it off."
+    },
+    {
+        category: "Animals",
+        points: 30,
+        question: "THE BIRDS ARE ATTACKING.",
+        answers: [`<button type="button">Attack back</button>`, `<button type="button">Call the army</button>`, `<button type="button" id="correct">Hide in your attic</button>`, `<button type="button">Pray</button>`],
+        wrongAnswer: "WRONG. Ever seen The Birds? We don't know why hiding in an attic worked either, but the important thing is: it worked."
+    },
+    {
         category: "Serial Killers",
         points: 40,
         question: "You wake up chained to wall in an empty basement.",
@@ -85,6 +127,20 @@ const questionInfo = [
         wrongAnswer: "WRONG. Look, you can't save everybody. Just leave her and hope she doesn't find you."
     },
     {
+        category: "Zombies",
+        points: 40,
+        question: "You and your partner are surrounded by a horde of the walking dead.",
+        answers: [`<button type="button" id="correct">Sacrifice your partner</button>`, `<button type="button">Act natural</button>`, `<button type="button">Call for help</button>`, `<button type="button">Die together</button>`],
+        wrongAnswer: "WRONG. Only one of you is gonna make it out alive anyway, might as well make sure it's you."
+    },
+    {
+        category: "Animals",
+        points: 40,
+        question: "A mutated spider's cornered you in an abandoned mine shaft",
+        answers: [`<button type="button">Fight it</button>`, `<button type="button" id="correct">Spray it with perfume</button>`, `<button type="button">Bob and weave</button>`, `<button type="button">Accept your fate</button>`],
+        wrongAnswer: "WRONG. If Eight-Legged Freaks has taught us anything, it's to always keep perfume on your person in the event of large, mutated spiders."
+    },
+    {
         category: "Serial Killers",
         points: 50,
         question: "A camper that drowned 20 years ago just busted in your door",
@@ -104,12 +160,26 @@ const questionInfo = [
         question: "Children disappear from your town every 27 years.",
         answers: [`<button type="button">Leave the town</button>`, `<button type="button">Face the evil festering in the underground</button>`, `<button type="button">File missing person reports</button>`, `<button type="button" id="correct">Thank God it didn't come when you were a kid</button>`],
         wrongAnswer: "WRONG. Bad things come to people who shake up the status quo in a 'sleepy town.' Just keep your head down and you'll do fine."
+    },
+    {
+        category: "Zombies",
+        points: 50,
+        question: "You can only pick one more member for your apocalypse squad.",
+        answers: [`<button type="button" id="correct">Pick the nurse</button>`, `<button type="button">Pick the army vet</button>`, `<button type="button">Pick your mom</button>`, `<button type="button">Pick no one. You're a lone wolf.</button>`],
+        wrongAnswer: "WRONG. Who do you think's gonna stitch up the hand you hacked off when it got bitten?"
+    },
+    {
+        category: "Animals",
+        points: 50,
+        question: "Your expedition lead waits until you've arrived on the mysterious island to tell you that he plans to capture a large ape creature.",
+        answers: [`<button type="button">Help him do it</button>`, `<button type="button">Try to get off the island</button>`, `<button type="button">Save him from his own stupidity</button>`, `<button type="button" id="correct">Kill him</button>`],
+        wrongAnswer: "WRONG. He's betrayed you. He must die."
     }
    
 ]
 
 //creating a for loop to create divs with a class names, and an id that will match the index of it's corresponding object in my questionInfo array
-for (let i = 0; i <15; i++) {
+for (let i = 0; i <25; i++) {
     let div = document.createElement('div')
     div.classList.add("grid-item")
     div.classList.add("question-tile")
@@ -128,10 +198,11 @@ var numberOfQuestionsAnswered = 0
 questionTile.on('click', function (evt) {
     //storing the id of the div's in a variable
     let questionTileID = evt.target.id
+    console.log(questionTileID)
     //setting the clicked on div's inner html so that it equals the question property of the appropriate object in my questionInfo array
     event.target.innerHTML = questionInfo[questionTileID].question
     //looping through the answers array to reassign the value of the answer field's inner html to the answer property of the array item we're on
-    for (let i = 0; i<questionInfo[0].answers.length; i++) {
+    for (let i = 0; i<questionInfo[questionTileID].answers.length; i++) {
         answerField.innerHTML += questionInfo[questionTileID].answers[i]
     }  
     correspondingQuestion = questionTileID
