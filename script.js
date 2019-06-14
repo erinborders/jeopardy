@@ -4,19 +4,22 @@ const questionInfo = [
         category: "Serial Killers",
         points: 10,
         question: "You're home alone and hear a noise",
-        answers: ['<button type="button">Investigate loudly</button>', '<button type="button">Investigate quietly</button>', '<button type="button" id="correct">Call the police</button>', '<button type="button">Ignore it</button>']
+        answers: ['<button type="button">Investigate loudly</button>', '<button type="button">Investigate quietly</button>', '<button type="button" id="correct">Call the police</button>', '<button type="button">Ignore it</button>'],
+        wrongAnswer: "If you're doing anything but calling the police, you deserve to die"
     },
     {
         category: "Serial Killers",
         points: 20,
         question: "A stranger calls and says nothing, just breathes",
-        answers: [`<button type="button">Tell them you dont want any</button>`, `<button type="button">Hang up</button>`, `<button type="button">Call the police</button>`, `<button type="button" id="correct">Move out of your house</button>`]
+        answers: [`<button type="button">Tell them you dont want any</button>`, `<button type="button">Hang up</button>`, `<button type="button">Call the police</button>`, `<button type="button" id="correct">Move out of your house</button>`],
+        wrongAnswer: "The killer's calling from INSIDE the house, you better move."
     },
     {
         category: "Serial Killers",
         points: 30,
         question: "A strange local accosts you with warnings on your trip",
-        answers: [`<button type="button">Roll your eyes</button>`, `<button type="button">Insult them</button>`, `<button type="button" id="correct">Call off the trip</button>`, `<button type="button">Call the police</button>`]
+        answers: [`<button type="button">Roll your eyes</button>`, `<button type="button">Insult them</button>`, `<button type="button" id="correct">Call off the trip</button>`, `<button type="button">Call the police</button>`],
+        wrongAnswer: "Call off your trip or get eaten by cannibals, it's your choice."
     }
    
 ]
@@ -53,7 +56,7 @@ questionTile.on('click', function (evt) {
 answerField.addEventListener('click', function (evt) {
     //if the button clicked on doesn't have an id "correct" give them a wrong answer alert
     if (evt.target.id !== "correct") {
-        alert("wrong answer!")
+        alert(questionInfo[correspondingQuestion].wrongAnswer)
         deductFromScore();
     } else {
         alert("right answer!")
