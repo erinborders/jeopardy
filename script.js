@@ -68,8 +68,14 @@ function addToScore () {
     score += questionInfo[correspondingQuestion].points
     document.querySelector('#score').innerHTML = `Score: ${score}`
 }
-
+//making a function to deduct from the score
 function deductFromScore () {
     score -= questionInfo[correspondingQuestion].points
     document.querySelector('#score').innerHTML = `Score: ${score}`
+}
+
+//making a function to tell you when you've won
+
+function youHaveWon () {
+
 }
