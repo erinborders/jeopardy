@@ -116,7 +116,7 @@ const questionInfo = [
         category: "Monsters",
         points: 40,
         question: "There's an alien in the air vents of your space ship.",
-        answers: [`<button type="button" id="correct">KILL IT WITH FIRE</button>`, `<button type="button">Do as your local android says</button>`, `<button type="button">Trap it in the airlock</button>`, `<button type="button">Try to communicate</button>`],
+        answers: [`<button type="button">KILL IT WITH FIRE</button>`, `<button type="button">Do as your local android says</button>`, `<button type="button" id="correct">Trap it in the airlock</button>`, `<button type="button">Try to communicate</button>`],
         wrongAnswer: "WRONG. You're in SPACE. Always trap it in the airlock."
     },
     {
@@ -198,7 +198,6 @@ var numberOfQuestionsAnswered = 0
 questionTile.on('click', function (evt) {
     //storing the id of the div's in a variable
     let questionTileID = evt.target.id
-    console.log(questionTileID)
     //setting the clicked on div's inner html so that it equals the question property of the appropriate object in my questionInfo array
     event.target.innerHTML = questionInfo[questionTileID].question
     //looping through the answers array to reassign the value of the answer field's inner html to the answer property of the array item we're on

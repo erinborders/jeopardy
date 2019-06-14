@@ -58,6 +58,7 @@ div {
     z-index: 1;
     display: inline-block;
     display: none;
+    border-radius: 15px;
 }
 
 #loserMessage {
@@ -75,7 +76,7 @@ div {
     border-radius: 15px;
 }
 
-#loserMessageContent {
+#messageContent {
     text-align: center;
     padding: 10px;
     border-radius: 15px;
