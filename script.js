@@ -38,6 +38,8 @@ var questionTile = $('.question-tile')
 var answerField = document.querySelector('.answer-field')
 //create a variable to store the id of the question tile that was clicked
 var correspondingQuestion = 0
+//create a variable to store the amount of question tiles they've clicked on
+var numberOfQuestionsAnswered = 0
 
 questionTile.on('click', function (evt) {
     //storing the id of the div's in a variable
@@ -49,6 +51,7 @@ questionTile.on('click', function (evt) {
         answerField.innerHTML += questionInfo[questionTileID].answers[i]
     }  
     correspondingQuestion = questionTileID
+    numberOfQuestionsAnswered++
 })
 
 //create function to figure out if answers are right or wrong
@@ -71,27 +74,37 @@ answerField.addEventListener('click', function (evt) {
 //creating a score variable
 var scoreAsString = document.querySelector('#score').innerHTML
 var score = parseInt(scoreAsString.substr(6))
+//create a correct tally
+var numberOfCorrectAnswers = 0
+//create an incorrect tally
+var numberOfWrongAnswers = 0
 
 //making a function to add to the score
 function addToScore () {
     score += questionInfo[correspondingQuestion].points
     document.querySelector('#score').innerHTML = `Score: ${score}`
+    numberOfCorrectAnswers++
 }
 //making a function to deduct from the score
 function deductFromScore () {
     score -= questionInfo[correspondingQuestion].points
     document.querySelector('#score').innerHTML = `Score: ${score}`
+    numberOfWrongAnswers++
 }
 
 
-
-
-//making a function to tell you when you've won
-function youHaveWon () {
-    $('#winnerMessage').show();
+//making a function to display whether the player won or lost
+function showThemWhatTheyWon () {
+    if (numberOfCorrectAnswers >= 8) {
+        $('#winnerMessage').show();
+    } else {
+        $('#loserMessage').show();
+    }
 }
-
-//making a function to tell you when you've lost
-function youHaveLost () {
-    $('#loserMessage').show();
+//a function that only displays results after a certain amount of questions have been answered
+function gameResults () {
+    if (numberOfQuestionsAnswered === 12) {
+        showThemWhatTheyWon();
+    }
 }
+gameResults();
