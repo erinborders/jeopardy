@@ -49,7 +49,7 @@ div {
 #winnerMessage {
     position: absolute;
     top: 35vh;
-    left: 36vw;
+    left: 32vw;
     padding: 10px;
     border: 1px solid black;
     min-width: 10vw;
@@ -63,7 +63,7 @@ div {
 #loserMessage {
     position: absolute;
     top: 35vh;
-    left: 36vw;
+    left: 26vw;
     padding: 10px;
     border: 1px solid black;
     min-width: 10vw;
@@ -72,4 +72,11 @@ div {
     z-index: 1;
     display: inline-block;
     display: none;
+    border-radius: 15px;
+}
+
+#loserMessageContent {
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
 }
