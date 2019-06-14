@@ -15,6 +15,13 @@ const questionInfo = [
         wrongAnswer: "WRONG. You stand literally no chance against a beast. Go back."
     },
     {
+        category: "Ghosts and Demons",
+        points: 10,
+        question: "There's a ouija board in your basement",
+        answers: [`<button type="button">Sweet! Let's play.</button>`, `<button type="button" id="correct">Burn it</button>`, `<button type="button">Use it for a conversation starter</button>`, `<button type="button">Summon the spirit of your dead son</button>`],
+        wrongAnswer: "WRONG. Don't take any chances - just burn it."
+    },
+    {
         category: "Serial Killers",
         points: 20,
         question: "A stranger calls and says nothing, just breathes.",
@@ -27,6 +34,13 @@ const questionInfo = [
         question: "You're lost in a cave of bat-human mutants",
         answers: [`<button type="button">Panic</button>`, `<button type="button">Find a good hiding spot</button>`, `<button type="button" id="correct">Fight your way out</button>`, `<button type="button">Become one of them</button>`],
         wrongAnswer: "WRONG. They're BAT-PEOPLE. They know this cave better than you do and the only reason they'll understand is violence."
+    },
+    {
+        category: "Ghosts and Demons",
+        points: 20,
+        question: "A doll keeps appearing on your doorstep.",
+        answers: [`<button type="button" id="correct">Call the exorcist</button>`, `<button type="button">Give it to your daughter</button>`, `<button type="button">Keep it as decoration</button>`, `<button type="button">Look at it with nostalgia for your own childhood</button>`],
+        wrongAnswer: "WRONG. Dude, even if it wasn't haunted, you don't know where that thing's been."
     },
     {
         category: "Serial Killers",
@@ -60,7 +74,7 @@ const questionInfo = [
         category: "Serial Killers",
         points: 50,
         question: "A camper that drowned 20 years ago just busted in your door",
-        answers: [],
+        answers: [`<button type="button">Fight him</button>`, `<button type="button">Insult his mother</button>`, `<button type="button" id="correct">Accept your (probably painful) death</button>`, `<button type="button">Run</button>`],
         wrongAnswer: "WRONG. Honestly, you're probably not the main character. You were destined to die. "
     },
     {
@@ -74,7 +88,7 @@ const questionInfo = [
 ]
 
 //creating a for loop to create divs with a class names, and an id that will match the index of it's corresponding object in my questionInfo array
-for (let i = 0; i <10; i++) {
+for (let i = 0; i <12; i++) {
     let div = document.createElement('div')
     div.classList.add("grid-item")
     div.classList.add("question-tile")
@@ -118,6 +132,7 @@ answerField.addEventListener('click', function (evt) {
     document.getElementById(correspondingQuestion).innerHTML = ""
     //to remove the answer buttons after they've been clicked
     $('.answer-field').children().remove()
+    gameResultsDemo();
 })
 
 //creating a score variable
@@ -143,17 +158,30 @@ function deductFromScore () {
 
 
 //making a function to display whether the player won or lost
-function showThemWhatTheyWon () {
-    if (numberOfCorrectAnswers >= 8) {
+function showThemWhatTheyWonDemo () {
+    if (score >= 60) {
         $('#winnerMessage').show();
     } else {
         $('#loserMessage').show();
     }
 }
 //a function that only displays results after a certain amount of questions have been answered
-function gameResults () {
-    if (numberOfQuestionsAnswered === 12) {
-        showThemWhatTheyWon();
+function gameResultsDemo () {
+    if (numberOfQuestionsAnswered === 6) {
+        showThemWhatTheyWonDemo();
     }
 }
-gameResults();
+
+// function showThemWhatTheyWon () {
+//     if (numberOfCorrectAnswers >= 17) {
+//         $('#winnerMessage').show();
+//     } else {
+//         $('#loserMessage').show();
+//     }
+// }
+
+// function gameResults () {
+//     if (numberOfQuestionsAnswered === 25) {
+//         showThemWhatTheyWon();
+//     }
+// }
