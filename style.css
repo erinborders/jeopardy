@@ -9,19 +9,28 @@ body {
     min-height: 100vh;
 }
 
-div {
+/* div {
     background-color: white;
-}
+} */
 
 /* arranging the jeopardy boxes */
 .game-container {
     display: inline-grid;
     grid-gap: 10px 10px;
-    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh;
+    grid-template-rows: 15vh 15vh 15vh 15vh 15vh 15vh 15vh 15vh;
     grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
-    justify-items: center;
-    align-items: center; 
+    justify-items: stretch;
+    /* align-items: center;  */
     margin: 10vh 7vw;
+}
+
+.grid-item {
+    background-color: white;
+    /* justify-self: stretch;
+    align-self: stretch; */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3) inset;
+    
 }
 
 #timer {
