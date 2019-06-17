@@ -4,7 +4,7 @@
 - Project link: https://github.com/users/erinborders/projects/1
 - App link: https://happy-leakey-6af6fb.netlify.com/
 
-#Overview
+# Overview
 You've played normal Jeopardy. Now it's time to test your survival knowledge with Jeopardy: Horror Edition! Get more than 60 points in 6 rounds of questions and you're a guaranteed to make it in any horror movie. Any less: sorry, you're a goner.
 
 Go ahead, figure out your horror movie fate!

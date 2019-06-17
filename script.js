@@ -108,7 +108,7 @@ const questionInfo = [
     {
         category: "Serial Killers",
         points: 40,
-        question: "You wake up chained to wall in an empty basement.",
+        question: "You wake up chained to a wall in an empty basement.",
         answers: [`<button type="button" class="btn btn-light">Scream for help</button>`, `<button type="button" class="btn btn-light" id="correct">Sever the chained limb</button>`, `<button type="button" class="btn btn-light">Ask the kidnapper what they want</button>`, `<button type="button" class="btn btn-light">Sob uncontrollably</button>`],
         wrongAnswer: "WRONG. No one's going to help you, make like a fox and chew off your leg"
     },
@@ -212,14 +212,12 @@ questionTile.on('click', function (evt) {
 //create function to figure out if answers are right or wrong
 
 answerField.addEventListener('click', function (evt) {
-    //add style to the buttons
-    
     //if the button clicked on doesn't have an id "correct" give them a wrong answer alert
     if (evt.target.id !== "correct") {
         alert(questionInfo[correspondingQuestion].wrongAnswer)
         deductFromScore();
     } else {
-        alert("right answer!")
+        alert("Right answer!")
         addToScore();
     }
     //to remove the question after it's been asked
@@ -261,7 +259,7 @@ function showThemWhatTheyWonDemo () {
 }
 //a function that only displays results after a certain amount of questions have been answered
 function gameResultsDemo () {
-    if (numberOfQuestionsAnswered === 6) {
+    if (numberOfQuestionsAnswered === 5) {
         showThemWhatTheyWonDemo();
     }
 }

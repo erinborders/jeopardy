@@ -9,9 +9,7 @@ body {
     min-height: 100vh;
 }
 
-/* div {
-    background-color: white;
-} */
+
 
 /* arranging the jeopardy boxes */
 .game-container {
@@ -35,7 +33,7 @@ body {
 
 .question-tile {
     font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .grid-item:not(.question-tile) {
@@ -59,6 +57,7 @@ body {
 
 .answer-field {
     grid-area: 8 / 1 / 8 / 6;
+    text-align: center;
 }
 
 .border {
