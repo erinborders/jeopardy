@@ -33,6 +33,18 @@ body {
     
 }
 
+.question-tile {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.grid-item:not(.question-tile) {
+    font-family: 'Creepster', cursive;
+    font-size: 30px;
+    color: rgb(185, 21, 21);
+    text-shadow: 2px 2px #4d0202
+}
+
 #timer {
     grid-column: 1 / span 1;
 }
