@@ -280,4 +280,16 @@ function gameResultsDemo () {
 //     }
 // }
 
+//add an event listener to refresh the page when you click the winner or loser message
 
+let winnerMessage = $('#winnerMessage')
+
+winnerMessage.on('click', function () {
+    location.reload();
+})
+
+let loserMessage = $('#loserMessage')
+
+loserMessage.on('click', function () {
+    location.reload();
+})

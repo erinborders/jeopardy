@@ -82,6 +82,10 @@ body {
     border-radius: 15px;
 }
 
+#winnerMessage:hover {
+    border: 2px solid white;
+}
+
 #loserMessage {
     position: absolute;
     top: 35vh;
@@ -95,6 +99,11 @@ body {
     display: inline-block;
     display: none;
     border-radius: 15px;
+}
+
+
+#loserMessage:hover {
+    border: 2px solid white;
 }
 
 #messageContent {
