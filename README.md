@@ -5,7 +5,7 @@
 - App link: https://cranky-hoover-53c2e0.netlify.com/
 
 # Overview
-You've played normal Jeopardy. Now it's time to test your survival knowledge with Jeopardy: Horror Edition! Get more than 60 points in 6 rounds of questions and you're guaranteed to make it in any horror movie. Any less: sorry, you're a goner.
+You've played normal Jeopardy. Now it's time to test your survival knowledge with Jeopardy: Horror Edition! Get more than 70% of the questions correct and you're guaranteed to make it in any horror movie. Any less: sorry, you're a goner.
 
 Go ahead, figure out your horror movie fate!
 
