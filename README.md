@@ -32,8 +32,8 @@ After finding out if their answer was correct or not, the user will then have th
 
 ![Wireframe](https://github.com/erinborders/jeopardy/blob/master/images/jeopardy%20winner.png)
 
-If the user gets 70% or more of the first 15 questions they answer correct, then they will win the game.
+If the user gets 70% or more correct after answering all of the questions, then they will win the game.
 
 ![Wireframe](https://github.com/erinborders/jeopardy/blob/master/images/jeopardy%20loser.png)
 
-If the user does not reach 70% correct on the first 15 questions, they will lose the game.
+If the user does not reach 70% correct after answering all of the questions, they will lose the game.
