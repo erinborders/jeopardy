@@ -196,21 +196,26 @@ var questionModal = $('#questionModal');
 var correspondingQuestion = 0
 //create a variable to store the amount of question tiles they've clicked on
 var numberOfQuestionsAnswered = 0
+var questionModal = $('#questionModal');
+var questionModalHeader = $('#questionModalHeader');
+var questionModalFooter = $('#questionModalFooter');
 
 var timer = null;
 
 questionTile.on('click', function (evt) {
     timer = setTimeout(outOfTime, 6000);
-
-    $('#questionModal').modal({keyboard: false });
-
     //storing the id of the div's in a variable
     let questionTileID = evt.target.id
     //setting the clicked on div's inner html so that it equals the question property of the appropriate object in my questionInfo array
     event.target.innerHTML = questionInfo[questionTileID].question
+
+    questionModalHeader.text(questionInfo[questionTileID].question);
+    questionModal.modal({keyboard: false});
+    questionModalFooter.html("");
     //looping through the answers array to reassign the value of the answer field's inner html to the answer property of the array item we're on
     for (let i = 0; i<questionInfo[questionTileID].answers.length; i++) {
-        answerField.innerHTML += questionInfo[questionTileID].answers[i]
+        //answerField.innerHTML += questionInfo[questionTileID].answers[i]
+        questionModalFooter.append(questionInfo[questionTileID].answers[i]);
     }  
     correspondingQuestion = questionTileID
     numberOfQuestionsAnswered++
@@ -219,7 +224,7 @@ questionTile.on('click', function (evt) {
 
 //create function to figure out if answers are right or wrong
 
-answerField.addEventListener('click', function (evt) {
+questionModalFooter.click('click', function (evt) {
     questionModal.modal('hide');
     clearTimeout(timer);
     //if the button clicked on doesn't have an id "correct" give them a wrong answer alert
@@ -231,10 +236,11 @@ answerField.addEventListener('click', function (evt) {
         addToScore();
     }
     //to remove the question after it's been asked
-    document.getElementById(correspondingQuestion).innerHTML = "";
+    $('#' + correspondingQuestion).off('click');
     //to remove the answer buttons after they've been clicked
     $('.answer-field').children().remove()
     gameResultsDemo();
+    questionModal.modal('hide');
 })
 
 //creating a score variable
@@ -273,6 +279,7 @@ function showThemWhatTheyWonDemo () {
     } else {
         $('#loserMessage').show();
     }
+    questionTiles.off('click'); // turn off clicking any tiles on game end
 }
 //a function that only displays results after a certain amount of questions have been answered
 function gameResultsDemo () {
