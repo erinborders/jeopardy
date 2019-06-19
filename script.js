@@ -190,12 +190,20 @@ for (let i = 0; i <25; i++) {
 
 var questionTile = $('.question-tile')
 var answerField = document.querySelector('.answer-field')
+
+var questionModal = $('#questionModal');
 //create a variable to store the id of the question tile that was clicked
 var correspondingQuestion = 0
 //create a variable to store the amount of question tiles they've clicked on
 var numberOfQuestionsAnswered = 0
 
+var timer = null;
+
 questionTile.on('click', function (evt) {
+    timer = setTimeout(outOfTime, 6000);
+
+    $('#questionModal').modal({keyboard: false });
+
     //storing the id of the div's in a variable
     let questionTileID = evt.target.id
     //setting the clicked on div's inner html so that it equals the question property of the appropriate object in my questionInfo array
@@ -212,6 +220,8 @@ questionTile.on('click', function (evt) {
 //create function to figure out if answers are right or wrong
 
 answerField.addEventListener('click', function (evt) {
+    questionModal.modal('hide');
+    clearTimeout(timer);
     //if the button clicked on doesn't have an id "correct" give them a wrong answer alert
     if (evt.target.id !== "correct") {
         alert(questionInfo[correspondingQuestion].wrongAnswer)
@@ -221,19 +231,19 @@ answerField.addEventListener('click', function (evt) {
         addToScore();
     }
     //to remove the question after it's been asked
-    document.getElementById(correspondingQuestion).innerHTML = ""
+    document.getElementById(correspondingQuestion).innerHTML = "";
     //to remove the answer buttons after they've been clicked
     $('.answer-field').children().remove()
     gameResultsDemo();
 })
 
 //creating a score variable
-var scoreAsString = document.querySelector('#score').innerHTML
-var score = parseInt(scoreAsString.substr(6))
+var scoreAsString = document.querySelector('#score').innerHTML;
+var score = parseInt(scoreAsString.substr(6));
 //create a correct tally
-var numberOfCorrectAnswers = 0
+var numberOfCorrectAnswers = 0;
 //create an incorrect tally
-var numberOfWrongAnswers = 0
+var numberOfWrongAnswers = 0;
 
 //making a function to add to the score
 function addToScore () {
@@ -241,7 +251,14 @@ function addToScore () {
     document.querySelector('#score').innerHTML = `Score: ${score}`
     numberOfCorrectAnswers++
 }
-//making a function to deduct from the score
+
+/** Alerts the user they ran out of time and deducts from score. */
+function outOfTime() {
+    alert("YOU DIDN'T ANSWER FAST ENOUGH");
+    deductFromScore();
+}
+
+/** making a function to deduct from the score */
 function deductFromScore () {
     score -= questionInfo[correspondingQuestion].points
     document.querySelector('#score').innerHTML = `Score: ${score}`
