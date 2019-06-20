@@ -2,7 +2,7 @@
 
 # Links
 - Project link: https://github.com/users/erinborders/projects/1
-- App link: https://cranky-hoover-53c2e0.netlify.com/
+- App link: https://friendly-kirch-cde74a.netlify.com/
 
 # Overview
 You've played normal Jeopardy. Now it's time to test your survival knowledge with Jeopardy: Horror Edition! Get more than 70% of the questions correct and you're guaranteed to make it in any horror movie. Any less: sorry, you're a goner.
