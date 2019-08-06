@@ -282,25 +282,25 @@ function showThemWhatTheyWonDemo () {
     questionTiles.off('click'); // turn off clicking any tiles on game end
 }
 //a function that only displays results after a certain amount of questions have been answered
-function gameResultsDemo () {
-    if (numberOfQuestionsAnswered === 5) {
-        showThemWhatTheyWonDemo();
+// function gameResultsDemo () {
+//     if (numberOfQuestionsAnswered === 5) {
+//         showThemWhatTheyWonDemo();
+//     }
+// }
+
+function showThemWhatTheyWon () {
+    if (numberOfCorrectAnswers >= 17) {
+        $('#winnerMessage').show();
+    } else {
+        $('#loserMessage').show();
     }
 }
 
-// function showThemWhatTheyWon () {
-//     if (numberOfCorrectAnswers >= 17) {
-//         $('#winnerMessage').show();
-//     } else {
-//         $('#loserMessage').show();
-//     }
-// }
-
-// function gameResults () {
-//     if (numberOfQuestionsAnswered === 25) {
-//         showThemWhatTheyWon();
-//     }
-// }
+function gameResults () {
+    if (numberOfQuestionsAnswered === 25) {
+        showThemWhatTheyWon();
+    }
+}
 
 //add an event listener to refresh the page when you click the winner or loser message
 
